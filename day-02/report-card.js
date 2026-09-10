@@ -30,8 +30,8 @@ console.log(
 
 console.log("-".repeat(55));
 
- for (const student of students) {
-   if (
+for (const student of students) {
+  if (
     student.name === undefined ||
     student.score === undefined ||
     student.attendance === undefined
@@ -40,7 +40,7 @@ console.log("-".repeat(55));
     continue;
   }
 
-   let grade;
+  let grade;
 
   if (student.score >= 90) {
     grade = "A";
@@ -59,7 +59,7 @@ console.log("-".repeat(55));
     fCount++;
   }
 
-   let status;
+  let status;
 
   if (student.score < 60 || student.attendance < 70) {
     status = "At risk";
