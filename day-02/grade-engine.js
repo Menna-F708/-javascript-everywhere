@@ -53,12 +53,10 @@ switch (grade) {
     console.log("Invalid grade");
 }
 
+// Logical operators
+let scoreLogical = 85;
+let attendance = 90;
 
-
-// Logical operators 
- let scoreLogical = 85;
- let attendance = 90;
- 
 if (scoreLogical >= 70 && attendance >= 80) {
   console.log("Certificate awarded");
 }
