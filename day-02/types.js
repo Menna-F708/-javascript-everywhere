@@ -77,8 +77,6 @@ for (let value of values) {
   console.log(value, value ? "Truthy" : "Falsy");
 }
 
-
-
 let value = 0;
 // When 0 is a valid value, I want ?? because it keeps 0.
 console.log(value || "Fallback");
