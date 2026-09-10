@@ -5,11 +5,9 @@ let history = [];
 const historyList = document.getElementById("historyList");
 const clearBtn = document.getElementById("clearBtn");
 
-
-
 checkBtn.addEventListener("click", () => {
-    let inputValue = scoreInput.value;
-    let inputValueNumber = Number(inputValue);
+  let inputValue = scoreInput.value;
+  let inputValueNumber = Number(inputValue);
   if (inputValue === "" || inputValue === Number.isNaN(inputValueNumber)) {
     message.textContent = "Please enter a number between 0 and 100";
     return;
