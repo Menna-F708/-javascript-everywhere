@@ -116,3 +116,4 @@ console.log(
 console.log(`Students at risk: ${atRiskCount}`);
 
 console.log(`Invalid records skipped: ${invalidCount}`);
+ 
