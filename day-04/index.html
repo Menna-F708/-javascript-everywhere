@@ -1,0 +1,60 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Dashboard</title>
+</head>
+
+<body>
+  <h1>Student Dashboard</h1>
+
+  <form id="studentForm">
+    <input
+      id="nameInput"
+      type="text"
+      placeholder="Student name"
+    />
+
+    <input
+      id="scoreInput"
+      type="number"
+      placeholder="Score"
+    />
+
+    <input
+      id="cityInput"
+      type="text"
+      placeholder="City (optional)"
+    />
+
+    <button type="submit">Add</button>
+
+    <button type="button" id="clearButton">
+      Clear
+    </button>
+
+    <button type="button" id="loadButton">
+      Load from server
+    </button>
+  </form>
+  
+<button id="freezeButton">Freeze</button>
+<button id="chunkedButton">Chunked</button>
+
+
+  <p id="message"></p>
+
+  <p id="summary">
+    Students: 0 | Average: 0.0
+  </p>
+
+  <ul id="studentList"></ul>
+
+
+
+
+  <script src="app.js"></script>
+</body>
+</html>
+ 
