@@ -1,0 +1,97 @@
+[
+  {
+    "id": 1,
+    "name": "Menna",
+    "score": 95,
+    "attendance": 92,
+    "address": {
+      "city": "Alexandria",
+      "street": "Main Street"
+    }
+  },
+  {
+    "id": 2,
+    "name": "Ahmed",
+    "score": 85,
+    "address": {
+      "city": "Cairo",
+      "street": "Nile Street"
+    }
+  },
+  {
+    "id": 3,
+    "name": "Sara",
+    "score": 75,
+    "attendance": 95,
+    "address": {
+      "city": "Alexandria",
+      "street": "Sea Road"
+    }
+  },
+  {
+    "id": 4,
+    "name": "Omar",
+    "score": 65,
+    "attendance": 80
+  },
+  {
+    "id": 5,
+    "name": "Nour",
+    "score": 55,
+    "attendance": 85,
+    "address": {
+      "city": "Giza",
+      "street": "Pyramids Road"
+    }
+  },
+  {
+    "id": 6,
+    "name": "Youssef",
+    "score": 90,
+    "attendance": 65,
+    "address": {
+      "city": "Cairo",
+      "street": "Nasr City"
+    }
+  },
+  {
+    "id": 7,
+    "name": "Mariam",
+    "score": 70,
+    "attendance": 75,
+    "address": {
+      "city": "Alexandria",
+      "street": "Corniche"
+    }
+  },
+  {
+    "id": 8,
+    "name": "Karim",
+    "score": 45,
+    "attendance": 60,
+    "address": {
+      "city": "Giza",
+      "street": "October Street"
+    }
+  },
+  {
+    "id": 9,
+    "name": "Laila",
+    "score": "82",
+    "attendance": 91,
+    "address": {
+      "city": "Cairo",
+      "street": "Zamalek Street"
+    }
+  },
+  {
+    "id": 10,
+    "name": "Hassan",
+    "score": 68,
+    "attendance": 78,
+    "address": {
+      "city": "Alexandria",
+      "street": "Smouha Street"
+    }
+  }
+]
