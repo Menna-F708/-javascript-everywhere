@@ -19,3 +19,4 @@ This repository contains my journey learning JavaScript Everywhere.
 | Day 01 | JavaScript Basics | [https://github.com/Menna-F708/-javascript-everywhere/tree/main/day-01]|
 | Day 02 | Fundamentals JavaScript| [https://github.com/Menna-F708/-javascript-everywhere/tree/main/day-02]|
 | Day 03 | Functions, Scopes & Hoisting | [https://github.com/Menna-F708/-javascript-everywhere/tree/main/day-03]|
+| Day 04 | Functions, Scopes & Hoisting | [https://github.com/Menna-F708/-javascript-everywhere/tree/main/day-04]|
