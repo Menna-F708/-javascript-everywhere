@@ -7,7 +7,7 @@ import {
   withTimeout,
 } from "./lib/index.js";
 
-const PASS_MARK = 50;
+ const PASS_MARK = 60;
 
 let students = [];
 
