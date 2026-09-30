@@ -1,0 +1,52 @@
+ [
+  {
+    "id": 1,
+    "name": "Menna",
+    "score": 95
+  },
+  {
+    "id": 2,
+    "name": "Ahmed",
+    "score": 85
+  },
+  {
+    "id": 3,
+    "name": "Sara",
+    "score": 75
+  },
+  {
+    "id": 4,
+    "name": "Omar",
+    "score": 65
+  },
+  {
+    "id": 5,
+    "name": "Nour",
+    "score": 55
+  },
+  {
+    "id": 6,
+    "name": "Youssef",
+    "score": 90
+  },
+  {
+    "id": 7,
+    "name": "Mariam",
+    "score": 70
+  },
+  {
+    "id": 8,
+    "name": "Karim",
+    "score": 45
+  },
+  {
+    "id": 9,
+    "name": "Laila",
+    "score": "82"
+  },
+  {
+    "id": 10,
+    "name": "Hassan",
+    "score": 68
+  }
+]
