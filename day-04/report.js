@@ -198,14 +198,12 @@ console.log("-".repeat(29));
 // ------------------------------------------------------
 
 for (const { name, score, attendance } of students) {
-  // Skip invalid students
-  if (!isValidScore(score)) {
+   if (!isValidScore(score)) {
     invalidCount++;
     continue;
   }
 
-  // Keep valid students for summary
-  validStudents.push({
+   validStudents.push({
     name,
     score,
     attendance,
@@ -262,15 +260,10 @@ for (const [grade, count] of Object.entries(gradeTally)) {
 // ------------------------------------------------------
 // Bonus
 // ------------------------------------------------------
-
 console.log("\nBonus test:");
-
 const original = validStudents[0];
-
 const boosted = withBonus(original);
-
 console.log(`Original score: ${original.score}`);
 console.log(`Boosted score: ${boosted.score}`);
-
 // Prove that the original object was NOT changed
 console.log(`Original after bonus: ${original.score}`);
