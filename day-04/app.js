@@ -309,4 +309,4 @@ chunkedButton.addEventListener("click", handleChunked);
 // ======================================================
 
 render();
- 
+ // Handle chunked loading
