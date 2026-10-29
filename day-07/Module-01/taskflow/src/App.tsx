@@ -7,7 +7,7 @@ import TaskList from "./components/Tasklist";
 import TaskForm from "./components/Taskform";
 import Footer from "./components/Footer";
 import "./App.css";
-
+ 
 export default function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [formOpen, setFormOpen] = useState(false);
@@ -15,12 +15,17 @@ export default function App() {
   return (
     <div className="app">
       <Header onMenuClick={() => setMenuOpen(true)} />
-      <Sidebar open={menuOpen} onClose={() => setMenuOpen(false)} />
+      <Sidebar
+        open={menuOpen}
+        onClose={() => setMenuOpen(false)}
+        title="My Workspace"
+        projects={["Task Board", "Finance Tracker", "Country Explorer"]}
+      />
 
       <main className="main">
         <h1>My Tasks</h1>
         <Toolbar onAdd={() => setFormOpen(true)} />
-          <TaskStats/>
+        <TaskStats />
         <TaskList />
         <Footer />
       </main>

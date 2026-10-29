@@ -1,16 +1,23 @@
 type SidebarProps = {
   open: boolean;
   onClose: () => void;
+  title: string;
+  projects: string[];
 };
 
-export default function Sidebar({ open, onClose }: SidebarProps) {
+export default function Sidebar({
+  open,
+  onClose,
+  title,
+  projects,
+}: SidebarProps) {
   return (
     <>
       <div className={`overlay ${open ? "show" : ""}`} onClick={onClose} />
 
       <aside className={`sidebar ${open ? "open" : ""}`}>
         <div className="sidebar-top">
-          <h2>Projects</h2>
+          <h2>{title}</h2>
           <button
             className="close-btn"
             onClick={onClose}
@@ -23,11 +30,11 @@ export default function Sidebar({ open, onClose }: SidebarProps) {
         </div>
 
         <ul>
-          <li className="p1 active">Website Redesign</li>
-          <li className="p2">Mobile App</li>
-          <li className="p3">Marketing</li>
-          <li className="p4">Design System</li>
+          {projects.map((project) => (
+            <li key={project}>{project}</li>
+          ))}
         </ul>
+       
       </aside>
     </>
   );
