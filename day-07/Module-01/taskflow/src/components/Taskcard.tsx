@@ -1,15 +1,6 @@
 import { useState } from "react";
-
-type Status = "todo" | "doing" | "done";
-
-type TaskCardProps = {
-  title: string;
-  description: string;
-  dueDate?: string;
-  status: Status;
-  late?: boolean;
-};
-
+import type { TaskCardProps, Status } from "../types/type";
+import Badge from "./Badge";
 const options: { value: Status; label: string }[] = [
   { value: "todo", label: "To Do" },
   { value: "doing", label: "In Progress" },
@@ -21,29 +12,43 @@ export default function TaskCard({
   description,
   dueDate,
   status: initialStatus,
+  priority,
   late,
 }: TaskCardProps) {
   const [status, setStatus] = useState<Status>(initialStatus);
+  const taskPriority = priority ?? "medium";
 
+  let tone: "neutral" | "warning" | "danger";
+
+  if (taskPriority === "high") {
+    tone = "danger";
+  } else if (taskPriority === "low") {
+    tone = "neutral";
+  } else {
+    tone = "warning";
+  }
   return (
     <article className={`cardTask ${status}`}>
       <div className="head">
-        <span className="dot" />
+        <span className="dot" aria-hidden="true" />
+
         <h3>{title}</h3>
+        <Badge tone={tone}>{taskPriority}</Badge>
       </div>
 
       <p>{description}</p>
 
       <div className="segment" role="group" aria-label="Task status">
-        {options.map((o) => (
+        {options.map((option) => (
           <button
-            key={o.value}
+            key={option.value}
             type="button"
-            className={status === o.value ? "on" : ""}
-            onClick={() => setStatus(o.value)}
+            className={status === option.value ? "on" : ""}
+            aria-pressed={status === option.value}
+            onClick={() => setStatus(option.value)}
           >
-            {o.label}
-          </button>
+            {option.label}
+          </button> 
         ))}
       </div>
 
@@ -53,6 +58,7 @@ export default function TaskCard({
             <rect x="4" y="5" width="16" height="15" rx="4" />
             <path d="M8 3v4M16 3v4M4 11h16" />
           </svg>
+
           {dueDate ?? "No due date"}
         </span>
 
