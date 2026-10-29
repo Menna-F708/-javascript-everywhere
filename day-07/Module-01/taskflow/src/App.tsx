@@ -23,11 +23,10 @@ export default function App() {
       />
 
       <main className="main">
-        <h1>My Tasks</h1>
-        <Toolbar onAdd={() => setFormOpen(true)} />
+         <Toolbar onAdd={() => setFormOpen(true)} />
         <TaskStats />
         <TaskList />
-        <Footer />
+        <Footer /> 
       </main>
 
       <TaskForm open={formOpen} onClose={() => setFormOpen(false)} />

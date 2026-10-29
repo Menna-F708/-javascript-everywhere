@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 export type Priority = "low" | "medium" | "high";
 export type Status = "todo" | "doing" | "done";
 export type TaskCardProps = {
@@ -14,3 +15,9 @@ export type BadgeProps = {
   children: React.ReactNode;
   tone?: BadgeTone;
 };
+
+export type SectionProps = {
+  title: string;
+  action?: ReactNode;
+  children: ReactNode;
+}; 
