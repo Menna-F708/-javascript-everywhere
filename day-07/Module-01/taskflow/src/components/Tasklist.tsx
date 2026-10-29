@@ -21,6 +21,13 @@ export default function TaskList() {
         dueDate="2026-11-12"
         status="done"
       />
+      <TaskCard
+        title="Sample Task 4"
+        description="This is a sample task 4"
+        dueDate="2026-11-04"
+        status="doing"
+        late
+      />
     </section>
   );
 }

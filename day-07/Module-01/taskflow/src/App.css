@@ -104,6 +104,9 @@ body {
 .sidebar li.p3 {
   --dot: #e8a98f;
 }
+.sidebar li.p4 {
+  --dot: #4f9a78;
+}
 .sidebar li.active {
   background: var(--primary-soft);
   color: var(--primary-ink);

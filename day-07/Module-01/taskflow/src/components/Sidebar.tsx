@@ -26,6 +26,7 @@ export default function Sidebar({ open, onClose }: SidebarProps) {
           <li className="p1 active">Website Redesign</li>
           <li className="p2">Mobile App</li>
           <li className="p3">Marketing</li>
+          <li className="p4">Design System</li>
         </ul>
       </aside>
     </>
