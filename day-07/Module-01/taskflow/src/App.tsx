@@ -2,6 +2,7 @@ import { useState } from "react";
 import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
 import Toolbar from "./components/Toolbar";
+import TaskStats from "./components/TaskStats";
 import TaskList from "./components/Tasklist";
 import TaskForm from "./components/Taskform";
 import Footer from "./components/Footer";
@@ -19,6 +20,7 @@ export default function App() {
       <main className="main">
         <h1>My Tasks</h1>
         <Toolbar onAdd={() => setFormOpen(true)} />
+          <TaskStats/>
         <TaskList />
         <Footer />
       </main>

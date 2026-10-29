@@ -884,6 +884,42 @@ body {
   font-weight: 300;
   color: var(--ink-soft);
 }
+/* ---------- TaskStats ---------- */
+.stats {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.stat {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 14px;
+  background: var(--surface);
+  border: 1px solid #efedf7;
+  border-radius: 999px;
+  font-size: 13px;
+  color: var(--ink-soft);
+}
+.stat::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--primary);
+}
+.stat strong {
+  font-weight: 600;
+  color: var(--ink);
+}
+.stat.done::before {
+  background: #4f9a78;
+}
+.stat.done strong {
+  color: #3f8a68;
+}
 @media (min-width: 1440px) {
   .footer-inner {
     max-width: 1360px;
@@ -895,7 +931,6 @@ body {
   }
 }
 
-/* ---------- الموبايل: الفورم أصغر وفي نص الصفحة + الفوتر في النص ---------- */
 @media (max-width: 600px) {
   .footer {
     padding-top: 40px;
