@@ -5,6 +5,7 @@ type HeaderProps = {
 };
 
 export default function Header({ onMenuClick }: HeaderProps) {
+  const name = "Menna";
   return (
     <header className="header">
       <div className="brand">
@@ -13,7 +14,7 @@ export default function Header({ onMenuClick }: HeaderProps) {
       </div>
 
       <div className="greeting">
-        Hi, Menna 👋 let's keep things calm today
+        <div className="circle-avatar">{name.charAt(0)}</div>
       </div>
 
       <button className="menu-btn" onClick={onMenuClick} aria-label="Open menu">
