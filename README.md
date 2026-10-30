@@ -20,3 +20,6 @@ This repository contains my journey learning JavaScript Everywhere.
 | Day 02 | Fundamentals JavaScript| [https://github.com/Menna-F708/-javascript-everywhere/tree/main/day-02]|
 | Day 03 | Functions, Scopes & Hoisting | [https://github.com/Menna-F708/-javascript-everywhere/tree/main/day-03]|
 | Day 04 | Functions, Scopes & Hoisting | [https://github.com/Menna-F708/-javascript-everywhere/tree/main/day-04]|
+| Day 05 | Promises, Async/Await, Modules + Git | [https://github.com/Menna-F708/-javascript-everywhere/tree/main/day-05]|
+| Day 07 |  React Intro - Components,props&state,jsx | [https://github.com/Menna-F708/-javascript-everywhere/tree/module-01-assignment/day-07/Module-01/taskflow]|
+  
