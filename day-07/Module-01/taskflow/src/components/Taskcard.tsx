@@ -1,6 +1,8 @@
+ 
 import { useState } from "react";
 import type { TaskCardProps, Status } from "../types/type";
 import Badge from "./Badge";
+
 const options: { value: Status; label: string }[] = [
   { value: "todo", label: "To Do" },
   { value: "doing", label: "In Progress" },
@@ -8,12 +10,14 @@ const options: { value: Status; label: string }[] = [
 ];
 
 export default function TaskCard({
+  id,
   title,
   description,
   dueDate,
   status: initialStatus,
   priority,
   late,
+  onDelete,
 }: TaskCardProps) {
   const [status, setStatus] = useState<Status>(initialStatus);
   const taskPriority = priority ?? "medium";
@@ -27,12 +31,14 @@ export default function TaskCard({
   } else {
     tone = "warning";
   }
+
   return (
     <article className={`cardTask ${status}`}>
       <div className="head">
         <span className="dot" aria-hidden="true" />
 
         <h3>{title}</h3>
+
         <Badge tone={tone}>{taskPriority}</Badge>
       </div>
 
@@ -48,7 +54,7 @@ export default function TaskCard({
             onClick={() => setStatus(option.value)}
           >
             {option.label}
-          </button> 
+          </button>
         ))}
       </div>
 
@@ -62,14 +68,28 @@ export default function TaskCard({
           {dueDate ?? "No due date"}
         </span>
 
-        <span className="details">
-          Details
-          <span className="arrow">
+        <div className="foot-actions">
+          <button
+            type="button"
+            className="delete-btn"
+            onClick={() => onDelete(id)}
+            aria-label={`Delete ${title}`}
+          >
             <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M9 6l6 6-6 6" />
+              <path d="M3 6h18M8 6V4h8v2m3 0-1 14H6L5 6m4 4v6m6-6v6" />
             </svg>
+            Delete
+          </button>
+
+          <span className="details">
+            Details
+            <span className="arrow">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M9 6l6 6-6 6" />
+              </svg>
+            </span>
           </span>
-        </span>
+        </div>
       </div>
     </article>
   );
