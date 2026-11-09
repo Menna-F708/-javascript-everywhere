@@ -1,0 +1,62 @@
+ <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Async Grade Report</title>
+  </head>
+
+  <body>
+    <h1>Async Grade Report</h1>
+
+    <button id="loadBtn">Load students</button>
+
+    <label>
+      <input type="checkbox" id="slowNetwork" />
+      Simulate slow network
+    </label>
+
+    <p id="status">Ready</p>
+
+    <hr />
+
+    <h2>Add Student</h2>
+
+    <form id="studentForm">
+      <input
+        id="studentName"
+        type="text"
+        placeholder="Student name"
+        required
+      />
+
+      <input
+        id="studentScore"
+        type="number"
+        min="0"
+        max="100"
+        placeholder="Score"
+        required
+      />
+
+      <button type="submit">Add</button>
+    </form>
+
+    <p id="summary">Average: —</p>
+
+    <hr />
+
+    <h2>Students</h2>
+
+    <div id="studentsList"></div>
+
+    <hr />
+
+    <button id="timeBtn">Time both</button>
+
+    <p id="timing"></p>
+
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>
+
