@@ -1,0 +1,13 @@
+
+<!-- p21.html -->
+<!DOCTYPE html>
+<ul id="list"><li data-id="7"><button data-action="delete">✕</button></li></ul>
+<script>
+  const list = document.getElementById("list");
+  list.addEventListener("click", (e) => {
+    const li = e.target.closest("li");
+    console.log("ul heard it from", e.target.tagName, "for task", li.dataset.id, typeof li.dataset.id);
+  });
+  list.querySelector("li").addEventListener("click", () => console.log("li"));
+  list.querySelector("button").click();
+</script>
