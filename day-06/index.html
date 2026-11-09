@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./layout-lab.css">
+  </head>
+  <body>
+    <header><h1>The Header</h1></header>
+    <main>
+       <section aria-labelledby="topics-title1">
+        <h2 id="topics-title1">Section 1</h2>
+      </section>
+      <section aria-labelledby="topics-title2">
+        <h2 id="topics-title2">Section 2</h2>
+      </section>
+      <section aria-labelledby="topics-title3">
+        <h2 id="topics-title3">Section 3</h2>
+      </section>
+      <section aria-labelledby="topics-title4">
+        <h2 id="topics-title4">Section 4</h2>
+      </section>
+      <section aria-labelledby="topics-title5">
+        <h2 id="topics-title5">Section 5</h2>
+      </section>
+
+      <form>
+        <label for="category">Category</label>
+
+        <select id="category">
+          <option>All</option>
+          <option>HTML</option>
+          <option>CSS</option>
+        </select>
+        <br>
+        <label for="search">Search topics</label>
+
+        <input id="search" type="text" />
+        <button type="submit">Search</button>
+         <button type="button">Back</button>
+      </form>
+      <p role="status">Loading questions...</p>
+      <p role="alert">Invalid email address</p>
+    </main>
+
+    <footer>The Footer</footer>
+  </body>
+</html>
