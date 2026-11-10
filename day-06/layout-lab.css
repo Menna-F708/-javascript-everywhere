@@ -1,0 +1,15 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+
+
+ input {
+  min-width: 44px;
+  min-height: 44px;
+  padding: 10px;
+}
+
+select{
+margin-bottom: 1rem;
+}

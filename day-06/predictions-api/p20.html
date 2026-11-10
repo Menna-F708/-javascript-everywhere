@@ -1,0 +1,15 @@
+<!-- p20.html -->
+<!DOCTYPE html>
+<form id="f">
+  <input name="title" value="Buy milk" />
+  <button id="b">Save</button>
+</form>
+<script>
+  const form = document.getElementById("f");
+  document.getElementById("b").addEventListener("click", () => console.log("click"));
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    console.log("submit", new FormData(form).get("title"));
+  });
+  document.getElementById("b").click();
+</script>
