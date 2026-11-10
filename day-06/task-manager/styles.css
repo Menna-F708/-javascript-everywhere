@@ -1,0 +1,687 @@
+ /*
+  ============================================================
+  TASK 19 — CSS
+  Grid, Flexbox, Responsive Design and Dark Mode
+  ============================================================
+*/
+
+
+/* ============================================================
+   1. DESIGN TOKENS
+   ============================================================
+*/
+
+:root {
+
+  /* -------------------------
+     Colors — Soft Sage & Blue
+     ------------------------- */
+
+  --bg: #f4f7f6;
+  --surface: #ffffff;
+
+  --text: #263332;
+  --muted: #687774;
+
+  --line: #dce5e2;
+
+  --accent: #5f8f88;
+  --accent-hover: #4d7d76;
+
+  --danger: #b85c63;
+
+  /* Priority colors */
+  --low: #4f8a68;
+  --medium: #b38a45;
+  --high: #b85c63;
+
+   --on-accent: #ffffff;
+
+ 
+
+  --radius-sm: 6px;
+  --radius-md: 9px;
+  --radius-lg: 14px;
+
+
+ 
+
+  --space-xs: 4px;
+  --space-sm: 6px;
+  --space-md: 10px;
+  --space-lg: 12px;
+  --space-xl: 16px;
+  --space-2xl: 24px;
+  --space-3xl: 32px;
+
+
+ 
+
+  --font-sans:
+    Inter,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  font-family: var(--font-sans);
+
+ 
+  color-scheme: light dark;
+}
+
+
+/* ============================================================
+   2. DARK MODE
+   ============================================================
+*/
+
+@media (prefers-color-scheme: dark) {
+
+  :root {
+
+    --bg: #151d1c;
+    --surface: #202b29;
+
+    --text: #edf4f1;
+    --muted: #a5b5b1;
+
+    --line: #354542;
+
+    --accent: #8dbbb3;
+    --accent-hover: #a3ccc4;
+
+    --danger: #ef858b;
+
+    /* Brighter priority colors for dark backgrounds */
+    --low: #78c49a;
+    --medium: #e0b96a;
+    --high: #ef858b;
+
+    --on-accent: #17201f;
+  }
+}
+
+
+/* ============================================================
+   3. GLOBAL RESET
+   ============================================================
+ 
+*/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+ 
+
+body {
+  margin: 0;
+
+  background: var(--bg);
+  color: var(--text);
+
+  line-height: 1.5;
+
+  font-family: var(--font-sans);
+}
+
+ 
+
+h1,
+h2,
+p {
+  margin: 0;
+}
+
+ 
+
+button,
+input,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+
+/* ============================================================
+   4. PAGE STRUCTURE — CSS GRID
+   ============================================================
+*/
+
+
+.site-header,
+.layout,
+.site-footer {
+  width: min(
+    1000px,
+    calc(100% - (2 * var(--space-xl)))
+  );
+
+  margin-inline: auto;
+}
+
+
+/* -------------------------
+   Header
+   ------------------------- */
+
+.site-header {
+  padding-block:
+    var(--space-3xl)
+    var(--space-xl);
+}
+
+
+.site-header p,
+.muted,
+.site-footer {
+  color: var(--muted);
+}
+
+
+/* -------------------------
+   Main Layout — GRID
+   ------------------------- */
+
+.layout {
+  display: grid;
+
+  /*
+    Mobile first:
+    one column.
+  */
+  grid-template-columns: 1fr;
+
+  gap: var(--space-xl);
+
+  align-items: start;
+}
+
+
+/*
+  Desktop layout.
+
+  Own layout decision:
+  The New Task panel stays compact at 300px,
+  while the Tasks panel gets the remaining width.
+*/
+
+@media (min-width: 760px) {
+
+  .layout {
+    grid-template-columns: 300px 1fr;
+  }
+}
+
+
+/* -------------------------
+   Panels
+   ------------------------- */
+
+.panel {
+  background: var(--surface);
+
+  border: 1px solid var(--line);
+
+  border-radius: var(--radius-lg);
+
+  padding: var(--space-xl);
+}
+
+
+.panel h2 {
+  font-size: 1.1rem;
+
+  margin-bottom: var(--space-lg);
+}
+
+
+/* -------------------------
+   Footer
+   ------------------------- */
+
+.site-footer {
+  padding-block: var(--space-3xl);
+
+  font-size: 0.85rem;
+}
+
+
+/* ============================================================
+   5. FORM — CSS GRID
+   ============================================================
+
+   The form uses Grid because its fields
+   are naturally arranged vertically.
+*/
+
+.task-form {
+  display: grid;
+
+  gap: var(--space-sm);
+}
+
+
+.task-form label {
+  font-weight: 600;
+
+  font-size: 0.9rem;
+}
+
+
+/* -------------------------
+   Inputs & Select
+   ------------------------- */
+
+input,
+select {
+  width: 100%;
+
+  padding:
+    var(--space-sm)
+    var(--space-md);
+
+  border: 1px solid var(--line);
+
+  border-radius: var(--radius-md);
+
+  background: var(--bg);
+}
+
+
+/* ============================================================
+   6. BUTTONS
+   ============================================================ */
+
+button {
+  border: 1px solid var(--line);
+
+  border-radius: var(--radius-md);
+
+  padding:
+    var(--space-sm)
+    var(--space-lg);
+
+  background: var(--surface);
+
+  cursor: pointer;
+}
+
+
+/*
+  Main submit button.
+*/
+
+button[type="submit"] {
+  margin-top: var(--space-sm);
+
+  background: var(--accent);
+
+  border-color: var(--accent);
+
+  color: var(--on-accent);
+
+  font-weight: 600;
+}
+
+
+/*
+  Small hover feedback.
+*/
+
+button:hover {
+  border-color: var(--accent);
+}
+
+
+/*
+  Disabled button.
+*/
+
+button:disabled {
+  opacity: 0.55;
+
+  cursor: progress;
+}
+
+
+/* ============================================================
+   7. KEYBOARD ACCESSIBILITY
+   ============================================================
+*/
+
+:focus-visible {
+  outline:
+    2px solid var(--accent);
+
+  outline-offset: 2px;
+}
+
+
+/* ============================================================
+   8. FORM ERROR
+   ============================================================ */
+
+.form-error {
+  color: var(--danger);
+
+  font-size: 0.9rem;
+
+  min-height: 1.5em;
+}
+
+
+/* ============================================================
+   9. TASK HEADER + TOOLBAR + STATUS
+   ============================================================
+
+   FLEXBOX is used here because these elements
+   need horizontal alignment.
+
+   gap is used for spacing instead of random margins.
+*/
+
+.tasks-head,
+.toolbar,
+.status-row {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: var(--space-lg);
+
+  flex-wrap: wrap;
+}
+
+
+/* -------------------------
+   Toolbar
+   ------------------------- */
+
+.toolbar {
+  margin-block: var(--space-lg);
+}
+
+ 
+
+.toolbar input {
+  flex:
+    1 1 200px;
+}
+
+
+/* ============================================================
+   10. FILTER BUTTONS — FLEXBOX
+   ============================================================
+*/
+
+.filters {
+  display: flex;
+
+  gap: var(--space-xs);
+}
+
+
+/*
+  Active filter.
+*/
+
+.filters button[aria-pressed="true"] {
+  background: var(--accent);
+
+  border-color: var(--accent);
+
+  color: var(--on-accent);
+}
+
+
+/* ============================================================
+   11. STATUS
+   ============================================================ */
+
+.status {
+  color: var(--muted);
+
+  min-height: 1.5em;
+}
+
+
+.status.error {
+  color: var(--danger);
+}
+
+
+/* ============================================================
+   12. TASK LIST — CSS GRID
+   ============================================================
+
+   Grid is used here mainly to create
+   consistent vertical spacing between tasks.
+*/
+
+.task-list {
+  list-style: none;
+
+  padding: 0;
+
+  margin:
+    var(--space-lg)
+    0;
+
+  display: grid;
+
+  gap: var(--space-sm);
+}
+
+
+/* ============================================================
+   13. TASK ROW — FLEXBOX
+   ============================================================
+
+   Requirement:
+   "Flexbox for task rows"
+
+   Flexbox keeps these elements aligned
+   in one horizontal row.
+*/
+
+.task {
+  display: flex;
+
+  align-items: center;
+
+  gap: var(--space-md);
+
+  padding:
+    var(--space-md)
+    var(--space-lg);
+
+  border:
+    1px solid var(--line);
+
+  border-left:
+    var(--space-xs) solid var(--medium);
+
+  border-radius: var(--radius-md);
+}
+
+
+/* ============================================================
+   14. PRIORITY — DATA ATTRIBUTE SELECTORS
+   ============================================================ 
+*/
+
+
+.task[data-priority="low"] {
+  border-left-color: var(--low);
+}
+
+
+.task[data-priority="medium"] {
+  border-left-color: var(--medium);
+}
+
+
+.task[data-priority="high"] {
+  border-left-color: var(--high);
+}
+
+
+/* ============================================================
+   15. TASK CHECKBOX
+   ============================================================ */
+
+.task input[type="checkbox"] {
+  width: 18px;
+
+  height: 18px;
+
+  flex: none;
+}
+
+ 
+
+.task-title {
+  flex: 1;
+
+  overflow-wrap: anywhere;
+}
+
+
+/* ============================================================
+   16. DONE TASK
+   ============================================================
+*/
+
+.task.done .task-title {
+  text-decoration: line-through;
+
+  color: var(--muted);
+}
+
+
+/* ============================================================
+   17. PENDING TASK
+   ============================================================
+*/
+
+.task.pending {
+  opacity: 0.6;
+}
+
+
+/* ============================================================
+   18. TASK SELECT
+   ============================================================ */
+
+.task select {
+  width: auto;
+
+  padding:
+    var(--space-xs)
+    var(--space-sm);
+}
+
+
+/* ============================================================
+   19. DELETE BUTTON
+   ============================================================ */
+
+.task .delete {
+  border: none;
+
+  background: none;
+
+  color: var(--danger);
+
+  padding:
+    var(--space-xs)
+    var(--space-sm);
+}
+
+
+/* ============================================================
+   20. CLEAR COMPLETED
+   ============================================================ */
+
+.quiet {
+  background: none;
+
+  border: none;
+
+  color: var(--muted);
+
+  padding: 0;
+
+  text-decoration: underline;
+}
+
+
+/* ============================================================
+   TASK 19.3 — GRID / FLEXBOX PROOF
+   ============================================================
+
+   GRID:
+
+   1. .layout
+      → Main page layout.
+      → One column on mobile.
+      → Two columns on desktop.
+
+   2. .task-form
+      → Arranges form fields vertically.
+
+   3. .task-list
+      → Creates consistent spacing between tasks.
+
+
+   FLEXBOX:
+
+   1. .task
+      → Aligns checkbox, title, priority and actions.
+
+   2. .tasks-head
+      → Aligns Tasks heading and task count.
+
+   3. .toolbar
+      → Aligns search and filter controls.
+      → flex-wrap makes it responsive.
+
+   4. .status-row
+      → Aligns status message and retry button.
+
+   5. .filters
+      → Keeps filter buttons together.
+
+
+   GRID:
+   Best when we are designing the overall
+   rows/columns structure.
+
+   FLEXBOX:
+   Best when we are aligning items
+   in one direction.
+*/
+
+
+/* ============================================================
+   RESPONSIVE DESIGN
+   ============================================================
+
+   Mobile:
+   - Main layout = one column
+   - Toolbar can wrap
+
+   Desktop:
+   - Main layout = two columns
+   - Task list gets remaining space
+
+   No extra media query is needed for the toolbar
+   because flex-wrap already handles narrow widths.
+*/
