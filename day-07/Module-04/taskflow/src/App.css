@@ -1718,3 +1718,40 @@ body {
   text-align: center;
   color: #888;
 }
+
+
+
+.duplicate-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 7px 10px;
+  border: 1px solid #dcd6fa;
+  border-radius: 10px;
+  background: #ece9fa;
+  color: #4a3f9a;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.duplicate-btn svg {
+  width: 15px;
+  height: 15px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.duplicate-btn:hover {
+  background: #7c70d4;
+  border-color: #7c70d4;
+  color: white;
+}

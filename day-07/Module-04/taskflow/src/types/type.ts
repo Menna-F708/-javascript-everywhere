@@ -11,10 +11,11 @@ export type Task = {
   late?: boolean;
 };
 
-export type TaskCardProps = Task & {
-  onDelete: (id: number) => void;
-  onStatusChange: (id: number, newStatus: Status) => void;
-};
+  export type TaskCardProps = Task & {
+    onDelete: (id: number) => void;
+    onStatusChange: (id: number, status: Status) => void;
+    onDuplicate: (task: Omit<Task, "id">) => void;
+  };
 export type BadgeTone = "neutral" | "warning" | "danger";
 export type BadgeProps = {
   children: React.ReactNode;

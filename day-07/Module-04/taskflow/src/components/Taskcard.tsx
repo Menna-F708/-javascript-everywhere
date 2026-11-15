@@ -1,3 +1,4 @@
+ 
 import type { TaskCardProps, Status } from "../types/type";
 import Badge from "./Badge";
 
@@ -27,6 +28,7 @@ export default function TaskCard({
   late,
   onDelete,
   onStatusChange,
+  onDuplicate,
 }: TaskCardProps) {
   const taskPriority = priority ?? "medium";
 
@@ -42,7 +44,6 @@ export default function TaskCard({
 
   const next = nextStatus(status);
   const nextOption = options.find((option) => option.value === next);
-
 
   return (
     <article className={`cardTask ${status}`}>
@@ -60,6 +61,28 @@ export default function TaskCard({
           onClick={() => onStatusChange(id, next)}
         >
           Mark {nextOption?.label}
+        </button>
+
+        {/* Duplicate Button */}
+        <button
+          type="button"
+          className="duplicate-btn"
+          onClick={() =>
+            onDuplicate({
+              title: `Copy of ${title}`,
+              description,
+              dueDate,
+              status: "todo",
+              priority,
+            })
+          }
+          aria-label={`Duplicate ${title}`}
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="8" y="8" width="12" height="12" rx="2" />
+            <path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3" />
+          </svg>
+          Duplicate
         </button>
 
         <button

@@ -56,6 +56,22 @@ export default function TaskList({
     );
   }
 
+  // Duplicate task
+  function handleDuplicate(task: Omit<Task, "id">) {
+    setTasks((prevTasks) => {
+      const newId = Math.max(0, ...prevTasks.map((task) => task.id)) + 1;
+
+      return [
+        ...prevTasks,
+        {
+          ...task,
+          id: newId,
+          status: "todo",
+        },
+      ];
+    });
+  }
+
   // Calculate progress
   const doneTasks = tasks.reduce((count, task) => {
     return task.status === "done" ? count + 1 : count;
@@ -220,6 +236,7 @@ export default function TaskList({
               {...task}
               onDelete={handleDelete}
               onStatusChange={handleStatusChange}
+              onDuplicate={handleDuplicate}
             />
           ))
         ) : (
