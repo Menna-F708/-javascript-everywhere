@@ -1,0 +1,7 @@
+1. Why does useState(initialValues) not update when initialValues changes?
+   React uses the value passed to useState only when the component is initialized. On later renders, React keeps the current state instead of replacing it with the new initialValues prop. This prevents user changes to the state from being overwritten every time the parent renders. If the state should follow a changing prop, I need to handle that intentionally, for example with an effect or by avoiding duplicated state when it is not necessary.
+2. When is as StatusFilter safe, and when is it risky?
+   Using as StatusFilter is reasonable when I already know that the value can only be one of the allowed status-filter values, such as values coming from a controlled select whose options match the StatusFilter type. It is risky when the value comes from an external or untrusted source, because a type assertion only tells TypeScript to trust me; it does not check the value at runtime. In that case, I should validate the value before treating it as a StatusFilter.
+3. Why do we turn an empty date into undefined?
+   An empty date input usually gives us an empty string (""), but an empty string does not represent an actual date. Converting it to undefined lets the application represent the date as optional and makes it clear that no due date was provided. It also keeps the data consistent with a type where dueDate is optional, instead of storing an empty string as if it were a meaningful value.
+ 
